@@ -1,12 +1,12 @@
-const request = require('supertest');
+const request = require("supertest");
 
-import app from '../server';
+import app from "../server";
 
-test('Test `Rogers` total creditor value', async () => {
-  const res = await request(app).post('/credit-search').send({
-    surname: 'Rogers',
-    address: 'Flat 1 7 Ascot Park Street',
-    postcode: 'L9 7AR',
+test("Test `Rogers` total creditor value", async () => {
+  const res = await request(app).post("/credit-search").send({
+    surname: "Rogers",
+    address: "Flat 1 7 Ascot Park Street",
+    postcode: "L9 7AR",
   });
 
   expect(res.statusCode).toEqual(200);
@@ -17,11 +17,11 @@ test('Test `Rogers` total creditor value', async () => {
   );
 });
 
-test('Test `Rogers` secured creditor value', async () => {
-  const res = await request(app).post('/credit-search').send({
-    surname: 'Rogers',
-    address: 'Flat 1 7 Ascot Park Street',
-    postcode: 'L9 7AR',
+test("Test `Rogers` secured creditor value", async () => {
+  const res = await request(app).post("/credit-search").send({
+    surname: "Rogers",
+    address: "Flat 1 7 Ascot Park Street",
+    postcode: "L9 7AR",
   });
 
   expect(res.statusCode).toEqual(200);
@@ -32,11 +32,11 @@ test('Test `Rogers` secured creditor value', async () => {
   );
 });
 
-test('Test `Rogers` unsecured creditor value', async () => {
-  const res = await request(app).post('/credit-search').send({
-    surname: 'Rogers',
-    address: 'Flat 1 7 Ascot Park Street',
-    postcode: 'L9 7AR',
+test("Test `Rogers` unsecured creditor value", async () => {
+  const res = await request(app).post("/credit-search").send({
+    surname: "Rogers",
+    address: "Flat 1 7 Ascot Park Street",
+    postcode: "L9 7AR",
   });
 
   expect(res.statusCode).toEqual(200);
@@ -47,11 +47,11 @@ test('Test `Rogers` unsecured creditor value', async () => {
   );
 });
 
-test('Test `Rogers` qualifies value', async () => {
-  const res = await request(app).post('/credit-search').send({
-    surname: 'Rogers',
-    address: 'Flat 1 7 Ascot Park Street',
-    postcode: 'L9 7AR',
+test("Test `Rogers` qualifies value", async () => {
+  const res = await request(app).post("/credit-search").send({
+    surname: "Rogers",
+    address: "Flat 1 7 Ascot Park Street",
+    postcode: "L9 7AR",
   });
 
   expect(res.statusCode).toEqual(200);

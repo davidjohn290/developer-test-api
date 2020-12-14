@@ -18,13 +18,8 @@ app.use("/credit-search", creditSearchRouter);
 
 // Add any error handling
 errorHandling(app);
-
-app.use((err, req, res, next) => {
-  if (err.status === 400) {
-    res.status(400).send({ err: "Wrong search information inputted" });
-  } else if (err.status === 404) {
-    res.status(404).send({ msg: "Person not found" });
-  } else next(err);
+app.use((error, req, res, next) => {
+  if (/TypeError/.test(error)) res.status(404).send("Person not found");
 });
 
 export default app;
